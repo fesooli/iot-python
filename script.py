@@ -21,7 +21,12 @@ while(True):
         camera.capture('/home/pi/Desktop/image.jpg') # local para salvar a imagem
         camera.stop_preview()
 
-        s3 = boto3.client('s3') # variavel s3 da aws
+        session = boto3.Session(
+	    aws_access_key_id=settings.AWS_SERVER_PUBLIC_KEY,
+	    aws_secret_access_key=settings.AWS_SERVER_SECRET_KEY, 
+	    region_name=REGION_NAME
+	)
+        s3 = session.resource('s3') # variavel s3 da aws
         filename = 'image.jpg' # pegar caminho da iamgem tirada pela camera do rasp
         bucket_name = 'my-bucket' # nome do bucket no S3
 
