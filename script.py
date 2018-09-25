@@ -37,8 +37,8 @@ while(True):
 	time.sleep(1)                    #Pequena pausa para não saturar o procesador do Raspberry
 	
 	SESSION = session = boto3.Session(
-			aws_access_key_id="AKIAJXNAESFMTGWY37OA",
-			aws_secret_access_key="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", 
+			aws_access_key_id="ACCESS_KEY",
+			aws_secret_access_key="SECRET_KEY", 
 			region_name="us-east-1"
 		)
 	
